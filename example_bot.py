@@ -13,7 +13,7 @@ from matrix_bot_api.mcommand_handler import MCommandHandler
 # Global variables
 USERNAME = ""  # Bot's username
 PASSWORD = ""  # Bot's password
-SERVER = ""  # Matrix server URL
+SERVER = "https://matrix.bring.out.ba"  # Matrix server URL
 
 
 def hi_callback(room, event):
@@ -32,6 +32,8 @@ def echo_callback(room, event):
 def main():
     # Create an instance of the MatrixBotAPI
     bot = MatrixBotAPI(USERNAME, PASSWORD, SERVER)
+
+    print( bot )
 
     # Add a regex handler waiting for the word Hi
     hi_handler = MRegexHandler("Hi", hi_callback)
